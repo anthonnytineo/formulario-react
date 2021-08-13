@@ -49,7 +49,7 @@ export default function CrudApp() {
       `¿Estas seguro de eliminar el registro con el id '${id}'?`
     );
 
-    if(isDelete){
+    if (isDelete) {
       let newData = db.filter((el) => el.id !== id);
       setDb(newData);
     } else {
@@ -58,20 +58,21 @@ export default function CrudApp() {
   };
 
   return (
-    <>
-      <h2>Componente Crud</h2>
-      <CrudForm
-        createData={createData}
-        updateData={updateData}
-        dataToEdit={dataToEdit}
-        setDataToEdit={setDataToEdit}
-      />
-      <CrudTable
-        data={db}
-        setDataToEdit={setDataToEdit}
-        deleteData={deleteData}
-      />
-      <table></table>
-    </>
+    <div>
+      <h2> CRUD App </h2>
+      <article className="grid-1-2">
+        <CrudForm
+          createData={createData}
+          updateData={updateData}
+          dataToEdit={dataToEdit}
+          setDataToEdit={setDataToEdit}
+        />
+        <CrudTable
+          data={db}
+          setDataToEdit={setDataToEdit}
+          deleteData={deleteData}
+        />
+      </article>
+    </div>
   );
 }

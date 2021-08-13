@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import CrudApp from "./components/CrudApp";
 
 function App() {
@@ -6,6 +6,7 @@ function App() {
     <div>
       <h2>Ejercicios con REACT</h2>
       <CrudApp />
+      <hr />
     </div>
   );
 }

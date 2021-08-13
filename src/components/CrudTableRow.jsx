@@ -1,8 +1,7 @@
-import React from 'react';
+import React from "react";
 
-export default function CrudTableRow({el, setDataToEdit, deleteData}) {
-  
-  let {name, constellation, id} = el;
+export default function CrudTableRow({ el, setDataToEdit, deleteData }) {
+  let { name, constellation, id } = el;
 
   return (
     <tr>

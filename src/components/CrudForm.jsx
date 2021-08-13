@@ -6,25 +6,25 @@ const initialForm = {
   id: null,
 };
 
-export default function CrudForm(
-  {createData,
+export default function CrudForm({
+  createData,
   updateData,
   dataToEdit,
-  setDataToEdit}
-) {
+  setDataToEdit,
+}) {
   const [form, setForm] = useState({ initialForm });
 
   useEffect(() => {
-    if(dataToEdit) {
+    if (dataToEdit) {
       setForm(dataToEdit);
     }
-  },[dataToEdit])
+  }, [dataToEdit]);
 
   // Actualiza los datos del formulario
   const handleChange = (e) => {
     setForm({
       ...form,
-      [e.target.name]:e.target.value,
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -49,7 +49,7 @@ export default function CrudForm(
   };
 
   return (
-    <>
+    <div>
       <h3>{dataToEdit ? "Editar" : "Agregar"}</h3>
       <form onSubmit={handleSubmit}>
         <input
@@ -69,6 +69,6 @@ export default function CrudForm(
         <input type="submit" value="Enviar" />
         <input type="reset" value="Limpiar" onClick={handleReset} />
       </form>
-    </>
+    </div>
   );
 }
